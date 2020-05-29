@@ -1,0 +1,4 @@
+[dev]
+server1.test
+[prod]
+server2.test
