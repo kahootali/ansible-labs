@@ -1,0 +1,7 @@
+- name: Ignore Error
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: this will not be counted as a failure
+    command: /bin/false
+    ignore_errors: yes 
