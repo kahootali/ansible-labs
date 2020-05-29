@@ -1,0 +1,6 @@
+---
+- hosts: all
+  user : root
+  tasks:
+  - name: make sure apache is running
+    service: name=ssh state=started
