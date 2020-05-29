@@ -1,0 +1,5 @@
+--- # My First YAML playbook for ansible
+- hosts: all
+  user: root
+  connection: ssh
+  gather_facts: yes
