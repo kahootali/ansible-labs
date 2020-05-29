@@ -1,0 +1,22 @@
+- name: Control Failure Play
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: Fail if return is not zero
+    command: /bin/true
+    register: cmd_output
+    failed_when: cmd_output.rc != 0
+  - name: Fail if return is zero
+    command: /bin/false
+    register: cmd_output
+    failed_when: cmd_output.rc == 0
+- name: Play 2
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: Fail if return is zero
+    command: /bin/false
+    register: result
+    failed_when: result.rc == 0
+    changed_when:
+    - result.rc == 2
