@@ -1,0 +1,15 @@
+ssh-keygen
+cp ~/.ssh/id_rsa.pub .
+docker build -t diceansible .
+docker-compose up -d
+ssh-add ~/.ssh/ansible_lab_id_rsa
+ssh root@localhost -p 2224
+ssh root@localhost -p 2225
+
+#Adhoc commands
+ansible all -m ping
+ansible all -m apt -a "name=nginx state=absent" -u root
+ansible all -m apt -a "name=nginx state=present" -u root
+ansible all -m setup
+ansible dev -m apt -a "name=nginx state=absent" -u root
+ansible-playbook sshstatus.yml
