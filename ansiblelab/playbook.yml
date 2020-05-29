@@ -1,0 +1,26 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+  - name: Ansible command module multiple commands
+    command: "touch {{ item }}"
+    with_items:
+    - hello.txt
+    - hello2.txt
+    - hello3.txt
+    args:
+      chdir: /root/
+- hosts: all
+  gather_facts: yes
+  tasks:
+  - name: Ansible shell module multiple commands
+    shell: "cat {{ item }}"
+    with_items:
+    - hello.txt
+    - hello2.txt
+    - hello3.txt
+    args:
+      chdir: /root/
+
+
+
