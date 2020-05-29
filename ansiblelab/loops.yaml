@@ -1,0 +1,16 @@
+--- # LOOP PLAYBOOK EXAMPLE
+- hosts: all  
+  connection: ssh
+  gather_facts: yes
+  tasks:
+    - shell: "echo {{ item }}"
+      loop:
+        - "one"
+        - "two"
+    - name: add several users
+      user:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - testuser1
+        - testuser2
