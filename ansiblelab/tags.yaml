@@ -1,0 +1,15 @@
+- name: Play with tags
+  hosts: all
+  gather_facts: false
+  tags:
+      - test-tag
+  tasks:
+      - name: With Tag
+        debug: msg="With Tag"
+
+- name: Play without tags
+  hosts: all
+  gather_facts: false
+  tasks:
+      - name: Without Tag
+        debug: msg="Without Tag"
