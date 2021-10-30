@@ -1,6 +1,7 @@
 - hosts: all
   tasks:
-  - block:
+  - name: a simple block
+    block:
     - debug:
         msg: 'I execute normally'
     - name: i force a failure

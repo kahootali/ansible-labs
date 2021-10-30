@@ -9,3 +9,22 @@
   handlers:
    - name: Start Nginx
      service: name=nginx state=started
+---
+# - hosts: all
+#   tasks:
+#   - name: template configuration file 
+#     copy:
+#       src: loops.yaml
+#       dest: /tmp/loop.yaml 
+#     notify:
+#     - restart memcached 
+#     - restart apache
+
+#   handlers:
+#   - name: restart memcached 
+#     debug: 
+#       msg: "Restarting Memcached"
+#   - name: restart apache 
+#     debug: 
+#       msg: "Restarting Apache"
+  

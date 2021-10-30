@@ -2,17 +2,9 @@ FROM ubuntu:latest
 RUN apt-get update && \
     apt-get install -y openssh-server pwgen netcat net-tools curl wget && \
     apt-get clean all
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    python \
-    python-dev \
-    libxml2-dev \
-    libxslt-dev \
-    libssl-dev \
-    zlib1g-dev \
-    libyaml-dev \
-    libffi-dev \
-    python-pip
+
+RUN apt-get install -y python3-pip libssl-dev
+
 # Latest versions of python tools via pip
 RUN pip install --upgrade pip \
     virtualenv \

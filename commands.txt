@@ -8,6 +8,7 @@ ssh root@localhost -p 2225
 
 #Adhoc commands
 ansible all -m ping
+ansible-doc ping
 ansible all -m apt -a "name=nginx state=absent" -u root
 ansible all -m apt -a "name=nginx state=present" -u root
 ansible all -m setup

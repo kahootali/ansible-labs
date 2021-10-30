@@ -2,5 +2,7 @@
 - hosts: all
   user : root
   tasks:
-  - name: make sure apache is running
+  - name: Ping
+    ping:
+  - name: make sure ssh is running
     service: name=ssh state=started

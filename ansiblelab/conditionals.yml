@@ -6,11 +6,17 @@
   gather_facts: yes
   vars:
     playbook_type: conditional example
+    runner: Anyone
 
   tasks:
+    - name: Print Hello
+      debug: 
+        msg: "Hello Ali"
+      when: runner == "Ali"
     - name: Install apache to the distribution type(Centos7)
       command: yum install httpd -y
       when: ansible_os_family == "RedHat"
-    - name: Install apache to the distribution type(RedHat)
+    - name: Install apache to the distribution type(Ubuntu)
       command: apt-get install apache2 -y
       when: ansible_os_family == "Debian"
+    
