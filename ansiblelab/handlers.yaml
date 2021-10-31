@@ -8,8 +8,10 @@
 
   handlers:
    - name: Start Nginx
-     service: name=nginx state=started
----
+     service: 
+      name: nginx 
+      state: started
+# ---
 # - hosts: all
 #   tasks:
 #   - name: template configuration file 

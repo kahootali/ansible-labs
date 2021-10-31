@@ -7,6 +7,15 @@
       - name: With Tag
         debug: msg="With Tag"
 
+- name: Play with frontend tags
+  hosts: all
+  gather_facts: false
+  tags:
+      - frontend-tag
+  tasks:
+      - name: With Tag
+        debug: msg="Frontend Tag"
+
 - name: Play without tags
   hosts: all
   gather_facts: false

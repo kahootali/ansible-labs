@@ -5,4 +5,6 @@
   - name: Ping
     ping:
   - name: make sure ssh is running
-    service: name=ssh state=started
+    service: 
+      name=ssh 
+      state=started

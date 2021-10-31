@@ -17,6 +17,9 @@
       command: yum install httpd -y
       when: ansible_os_family == "RedHat"
     - name: Install apache to the distribution type(Ubuntu)
-      command: apt-get install apache2 -y
       when: ansible_os_family == "Debian"
+      apt:
+        name: apache2
+        state: present
+#      command: apt-get install apache2 -y
     

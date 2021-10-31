@@ -2,6 +2,8 @@
   hosts: localhost
   gather_facts: false
   tasks:
-  - name: this will not be counted as a failure
-    command: /bin/false
-    ignore_errors: yes 
+  # - name: this will not be counted as a failure
+  #   command: /bin/false
+  #   ignore_errors: yes 
+  - name: this will be counted as a success
+    command: "echo Hello"
