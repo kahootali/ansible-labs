@@ -1,12 +1,12 @@
 version: '3'
 services:
   server1.test:
-    image: kahootali/ansible-lab:batch-7
+    image: kahootali/ansible-lab:v1.0
     hostname: server1.test
     ports:
     - "2224:22"
   server2.test:
-    image: kahootali/ansible-lab:batch-7
+    image: kahootali/ansible-lab:v1.0
     hostname: server2.test
     ports:
     - "2225:22"

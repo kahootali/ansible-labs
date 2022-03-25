@@ -1,9 +1,9 @@
 - name: Ignore Error
-  hosts: localhost
+  hosts: all
   gather_facts: false
   tasks:
   # - name: this will not be counted as a failure
-  #   command: /bin/false
+  #   command: "false"
   #   ignore_errors: yes 
   - name: this will be counted as a success
     command: "echo Hello"
