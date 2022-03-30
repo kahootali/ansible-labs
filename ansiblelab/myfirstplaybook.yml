@@ -2,4 +2,11 @@
 - hosts: all
   user: root
   connection: ssh
-  gather_facts: yes
+  gather_facts: 
+  tasks:
+  - name: Install Curl
+    command: apt install curl
+  - name: Install Curl with Module
+    apt: 
+      name=apt 
+      state=present

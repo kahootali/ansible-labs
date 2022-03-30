@@ -5,14 +5,14 @@
     - debug:
         msg: 'I execute normally'
     - name: i force a failure
-      command: /bin/false
+      command: "false"
     - debug:
         msg: 'I never execute, due to the above task failing, :-('
     rescue:
       - debug:
           msg: 'I caught an error'
       - name: i force a failure in middle of recovery! >:-)
-        command: /bin/false
+        command: "false"
       - debug:
           msg: 'I also never execute :-('
     always:
